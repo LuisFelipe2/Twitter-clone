@@ -1,0 +1,27 @@
+Create DATABASE twitter_clone;
+
+CREATE table usuarios(
+    email varchar(100),
+    id bigint PRIMARY Key AUTO_INCREMENT,
+    senha varchar(50),
+    usuario varchar(60)
+                     );
+
+use twitter_clone;
+Create TABLE Tweet(
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP not null,
+    id_tweet bigint AUTO_INCREMENT PRIMARY KEY,
+    tweet varchar(150) not null
+	CONSTRAINT id_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario);
+);
+use twitter_clone;
+alter table tweet add 
+
+Create TABLE usuarios_seguidores(
+    data_registro datetime CURRENT_TIMESTAMP not null,
+    id_usuario_seguidor bigint AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY id_usuario REFERENCES usuarios(id),
+    seguindo_id_usuario bigint FOREIGN KEY REFERENCES usuarios(id)
+    );
+
+
